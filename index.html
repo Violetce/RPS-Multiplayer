@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stop: It's Giphy time</title>
+
+</head>
+
+<body>
+
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <div class="container">
+    <h3>User 1 Input</h3>
+    <label for="employee-name-input">User 1 Name:</label>
+    <input class="form-control" id="user1-input" placeholder="Jane Doe" type="text">
+    <ul>
+      <li id='user1-select1'>Rock</li>
+      <li id='user1-select2'>Paper</li>
+      <li id='user1-select3'>Scissors</li>
+    </ul>
+  </div>
+  <div class="container">
+    <h3>User 2 Input</h3>
+    <label for="employee-name-input">User 2 Name:</label>
+    <input class="form-control" id="user2-input" placeholder="John Doe" type="text">
+    <ul>
+      <li id='user2-select1'>Rock</li>
+      <li id='user2-select2'>Paper</li>
+      <li id='user2-select3'>Scissors</li>
+    </ul>
+  </div>
+  <div class="container">
+    <button id="submit">Submit for Winner!</button>
+
+    <h4 id="winner"></h4>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/index.js"></script>
+
+</body>
+
+</html>
