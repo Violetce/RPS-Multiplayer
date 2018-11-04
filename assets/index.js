@@ -25,7 +25,7 @@ let user2Wins = 0;
 
 
 
-database.ref().on("value", function (snapshot) {
+database.ref().on("child_added", function (snapshot) {
     database.ref().set({
         user1: user1,
         user2: user2,
@@ -53,9 +53,6 @@ $("#user1-select1").on("click", function (event) {
     document.getElementById("user1-select2").style.backgroundColor = "white";
     document.getElementById("user1-select3").style.color = "black";
     document.getElementById("user1-select3").style.backgroundColor = "white";
-    database.ref().set({
-        user1Selection: user1Selection
-    })
 })
 
 $("#user1-select2").on("click", function (event) {
@@ -66,9 +63,6 @@ $("#user1-select2").on("click", function (event) {
     document.getElementById("user1-select2").style.backgroundColor = "pink";
     document.getElementById("user1-select3").style.color = "black";
     document.getElementById("user1-select3").style.backgroundColor = "white";
-    database.ref().set({
-        user1Selection: user1Selection
-    })
 })
 
 $("#user1-select3").on("click", function (event) {
@@ -79,9 +73,6 @@ $("#user1-select3").on("click", function (event) {
     document.getElementById("user1-select2").style.backgroundColor = "white";
     document.getElementById("user1-select3").style.color = "black";
     document.getElementById("user1-select3").style.backgroundColor = "pink";
-    database.ref().set({
-        user1Selection: user1Selection
-    })
 })
 
 $("#user2-select1").on("click", function (event) {
@@ -92,9 +83,6 @@ $("#user2-select1").on("click", function (event) {
     document.getElementById("user2-select2").style.backgroundColor = "white";
     document.getElementById("user2-select3").style.color = "black";
     document.getElementById("user2-select3").style.backgroundColor = "white";
-    database.ref().set({
-        user2Selection: user2Selection
-    })
 })
 
 $("#user2-select2").on("click", function (event) {
@@ -105,9 +93,6 @@ $("#user2-select2").on("click", function (event) {
     document.getElementById("user2-select2").style.backgroundColor = "pink";
     document.getElementById("user2-select3").style.color = "black";
     document.getElementById("user2-select3").style.backgroundColor = "white";
-    database.ref().set({
-        user2Selection: user2Selection
-    })
 })
 
 $("#user2-select3").on("click", function (event) {
@@ -118,26 +103,17 @@ $("#user2-select3").on("click", function (event) {
     document.getElementById("user2-select2").style.backgroundColor = "white";
     document.getElementById("user2-select3").style.color = "black";
     document.getElementById("user2-select3").style.backgroundColor = "pink";
-    database.ref().set({
-        user2Selection: user2Selection
-    })
 })
 
 $("#submitName1").on("click", function (event) {
     event.preventDefault()
     user1 = $("#user1-input").val().trim();
-    database.ref().set({
-        user1: user1
-    })
     console.log(user1);
 })
 
 $("#submitName2").on("click", function (event) {
     event.preventDefault()
     user2 = $("#user2-input").val().trim();
-    database.ref().set({
-        user2: user2
-    })
     console.log(user2);
 })
 
@@ -178,13 +154,6 @@ $("#submit").on("click", function (event) {
         }
 
         console.log(winner);
-        database.ref().set({
-            winner: winner,
-            user1Wins: user1Wins,
-            user2Wins: user2Wins,
-            user2Selection: user2Selection,
-            user1Selection: user1Selection
-        })
     }
 })
 
