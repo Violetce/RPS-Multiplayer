@@ -21,7 +21,7 @@ let user1 = "";
 let user2 = "";
 let user1Wins = 0;
 let user2Wins = 0;
-//let messenger = "";
+let messenger = "";
 
 
 
@@ -29,7 +29,7 @@ database.ref().on("value", function (snapshot) {
     
     console.log("user1 selection" + snapshot.val().user1Selection);
     console.log("user2 selection" + snapshot.val().user2Selection);
-    //$("#chat_box").append('<br>' + snapshot.val().messenger);
+    
     $("#winner").text("Winner: " + snapshot.val().winner);
     $("#user1Wins").text("Wins for " + snapshot.val().user1 + ": " + snapshot.val().user1Wins);
     $("#user2Wins").text("Wins for " + snapshot.val().user2 + ": " + snapshot.val().user2Wins);
@@ -52,7 +52,7 @@ $("#user1-select1").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -72,7 +72,7 @@ $("#user1-select2").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -92,7 +92,7 @@ $("#user1-select3").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -112,7 +112,7 @@ $("#user2-select1").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -132,7 +132,7 @@ $("#user2-select2").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -152,7 +152,7 @@ $("#user2-select3").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -168,7 +168,7 @@ $("#submitName1").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -184,7 +184,7 @@ $("#submitName2").on("click", function (event) {
         user2Wins: user2Wins,
         user2Selection: user2Selection,
         user1Selection: user1Selection,
-        //messenger: messenger
+        messenger: messenger
     })
 })
 
@@ -233,24 +233,40 @@ $("#submit").on("click", function (event) {
             user2Wins: user2Wins,
             user2Selection: user2Selection,
             user1Selection: user1Selection,
-            //messenger: messenger
+            messenger: messenger
         })
     }
 })
 
-/* $("#message1_submit").on("click", function () {
+$("#message1_submit").on("click", function () {
     messenger = $("#user1-message").val();
+    $("#chat_box").append('<br>' + messenger);
     console.log(messenger);
     database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
         messenger: messenger
     })
 })
 
 $("#message2_submit").on("click", function () {
     messenger = $("#user2-message").val();
+    $("#chat_box").append('<br>' + messenger);
     console.log(messenger);
     database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
         messenger: messenger
     })
-}) */
+})
 
