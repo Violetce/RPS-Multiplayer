@@ -22,38 +22,27 @@
 
   <table class="container">
     <tr>
-      <p>Choose which user you will be, and select your choice of rock, paper, or scissors, and then hit submit!</p>
+      <p>First select which user you will be, optionally enter your name, and select your choice of rock, paper, or scissors, and then hit submit!</p>
     </tr>
     <tr>
       <td>
-        <h3>User 1 Input</h3>
-        <label for="user1-name-input">User 1 Name:</label>
-        <input class="form-control" id="user1-input" placeholder="Jane Doe" type="text">
-        <button id="submitName1">Submit Name</button><br><br>
+        <select name="user" id="userid">
+          <option value="User 1">User 1</option>
+          <option value="User 2">User 2</option>
+        </select><br>
+        <label for="user-name-input">User Name:</label>
+        <input class="form-control" id="user-input" placeholder="Jane Doe" type="text">
+        <button id="submitName">Submit Name</button><br><br>
         <ul>
-          <li id='user1-select1'>Rock</li>
-          <li id='user1-select2'>Paper</li>
-          <li id='user1-select3'>Scissors</li>
+          <li id='user-select1'>Rock</li>
+          <li id='user-select2'>Paper</li>
+          <li id='user-select3'>Scissors</li>
         </ul>
         <br>
-        <label for="user1-message-input">Messenger:</label>
-        <input class="form-control" id="user1-message" placeholder="My rock is going to scissors your paper!" type="text">
-        <button id="message1_submit">Send</button>
-        <h5 id="user1Wins"></h5>
-      </td>
-      <td>
-        <h3>User 2 Input</h3>
-        <label for="user2-name-input">User 2 Name:</label><input class="form-control" id="user2-input" placeholder="John Doe" type="text">
-        <button id="submitName2">Submit Name</button><br><br>
-        <ul>
-          <li id='user2-select1'>Rock</li>
-          <li id='user2-select2'>Paper</li>
-          <li id='user2-select3'>Scissors</li>
-        </ul>
-        <br>
-        <label for="user2-message-input">Messenger:</label><input class="form-control" id="user2-message" placeholder="My rock is going to scissors your paper!" type="text">
-        <button id="message2_submit">Send</button>
-        <h5 id="user2Wins"></h5>
+        <label for="user-message-input">Messenger:</label>
+        <input class="form-control" id="user-message" placeholder="My rock is going to scissors your paper!" type="text">
+        <button id="message_submit">Send</button>
+        <h5 id="userWins"></h5>
       </td>
     </tr>
     <tr>
