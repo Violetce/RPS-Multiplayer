@@ -25,17 +25,8 @@ let user2Wins = 0;
 
 
 
-database.ref().on("child_added", function (snapshot) {
-    database.ref().set({
-        user1: user1,
-        user2: user2,
-        winner: winner,
-        user1Wins: user1Wins,
-        user2Wins: user2Wins,
-        user2Selection: user2Selection,
-        user1Selection: user1Selection,
-        //messenger: messenger
-    })
+database.ref().on("value", function (snapshot) {
+    
     console.log("user1 selection" + snapshot.val().user1Selection);
     console.log("user2 selection" + snapshot.val().user2Selection);
     //$("#chat_box").append('<br>' + snapshot.val().messenger);
@@ -53,6 +44,16 @@ $("#user1-select1").on("click", function (event) {
     document.getElementById("user1-select2").style.backgroundColor = "white";
     document.getElementById("user1-select3").style.color = "black";
     document.getElementById("user1-select3").style.backgroundColor = "white";
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#user1-select2").on("click", function (event) {
@@ -63,6 +64,16 @@ $("#user1-select2").on("click", function (event) {
     document.getElementById("user1-select2").style.backgroundColor = "pink";
     document.getElementById("user1-select3").style.color = "black";
     document.getElementById("user1-select3").style.backgroundColor = "white";
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#user1-select3").on("click", function (event) {
@@ -73,6 +84,16 @@ $("#user1-select3").on("click", function (event) {
     document.getElementById("user1-select2").style.backgroundColor = "white";
     document.getElementById("user1-select3").style.color = "black";
     document.getElementById("user1-select3").style.backgroundColor = "pink";
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#user2-select1").on("click", function (event) {
@@ -83,6 +104,16 @@ $("#user2-select1").on("click", function (event) {
     document.getElementById("user2-select2").style.backgroundColor = "white";
     document.getElementById("user2-select3").style.color = "black";
     document.getElementById("user2-select3").style.backgroundColor = "white";
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#user2-select2").on("click", function (event) {
@@ -93,6 +124,16 @@ $("#user2-select2").on("click", function (event) {
     document.getElementById("user2-select2").style.backgroundColor = "pink";
     document.getElementById("user2-select3").style.color = "black";
     document.getElementById("user2-select3").style.backgroundColor = "white";
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#user2-select3").on("click", function (event) {
@@ -103,18 +144,48 @@ $("#user2-select3").on("click", function (event) {
     document.getElementById("user2-select2").style.backgroundColor = "white";
     document.getElementById("user2-select3").style.color = "black";
     document.getElementById("user2-select3").style.backgroundColor = "pink";
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#submitName1").on("click", function (event) {
     event.preventDefault()
     user1 = $("#user1-input").val().trim();
     console.log(user1);
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#submitName2").on("click", function (event) {
     event.preventDefault()
     user2 = $("#user2-input").val().trim();
     console.log(user2);
+    database.ref().set({
+        user1: user1,
+        user2: user2,
+        winner: winner,
+        user1Wins: user1Wins,
+        user2Wins: user2Wins,
+        user2Selection: user2Selection,
+        user1Selection: user1Selection,
+        //messenger: messenger
+    })
 })
 
 $("#submit").on("click", function (event) {
@@ -154,6 +225,16 @@ $("#submit").on("click", function (event) {
         }
 
         console.log(winner);
+        database.ref().set({
+            user1: user1,
+            user2: user2,
+            winner: winner,
+            user1Wins: user1Wins,
+            user2Wins: user2Wins,
+            user2Selection: user2Selection,
+            user1Selection: user1Selection,
+            //messenger: messenger
+        })
     }
 })
 
