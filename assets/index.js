@@ -21,7 +21,7 @@ let user1 = "";
 let user2 = "";
 let user1Wins = 0;
 let user2Wins = 0;
-let messenger = "";
+//let messenger = "";
 
 
 
